@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet">
+     <!-- Moment.js Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <title>Train Scheduler</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- jumbotron header -->
+        <div class="jumbotron" style="background-color: #89401C; color: white">
+            <h1 class="text-center display-4">Anytime is Train Time</h1>
+            <p class="text-center">Choo Choo. Chee Chee.</p>
+        </div>
+
+        <!-- current train block-->
+        <div class="row">
+            <div class="col">
+                <div class="card mb-4 border border-primary">
+                    <div class="card-header" style="background-color: #2365AF; color: white">
+                        <h6>Current Train Schedule</h6>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-sm" id="curr-train">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- new train info added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- add train block -->
+        <div class="row">
+            <div class="col">
+                <div class="card mb-4 border border-primary">
+                    <div class="card-header" style="background-color: #2365AF; color: white">
+                        <h6>Add Train</h6>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="train-name"><strong>Train Name</strong></label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="Destination"><strong>Destination</strong></label>
+                                <input type="text" class="form-control" id="dest">
+                            </div>
+                            <div class="form-group">
+                                <label for="Time"><strong>First Train Time (HH:mm - military time)</strong></label>
+                                <input type="text" class="form-control" id="time">
+                            </div>
+                            <div class="form-group">
+                                <label for="Frequency"><strong>Frequency (min)</strong></label>
+                                <input type="number" class="form-control" id="freq">
+                            </div>
+                            <button type="submit" class="btn" id="addtrain" style="background-color: #2365AF; color: white">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+<script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
