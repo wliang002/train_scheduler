@@ -66,7 +66,7 @@ var config = {
 
     var nextArrive = moment(time, "HH:mm").add(num * frequency, "minutes").format("hh:mm a");
     
-    var minAway = moment().diff(moment(nextArrive, "hh:mm a"), "minutes");
+    var minAway = Math.abs(moment().diff(moment(nextArrive, "hh:mm a"), "minutes"));
     console.log(minAway);
 
     newTrainInfo.next = nextArrive;
